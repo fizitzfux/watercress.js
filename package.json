@@ -1,0 +1,22 @@
+{
+	"name": "watercress.js",
+	"version": "0.0.1",
+	"description": "Watercress",
+	"author": "Fiztzfux",
+	"license": "MIT",
+	"type": "module",
+	"scripts": {
+		"dev": "nodemon -w backend backend",
+		"test": "TESTING=true npm start & npx cypress open 1>/dev/null"
+	},
+	"dependencies": {
+		"better-sqlite3": "^11.7.2",
+		"express": "^4.18.2",
+		"vite": "^6.0.7"
+	},
+	"devDependencies": {
+		"@sveltejs/vite-plugin-svelte": "5.0.3",
+		"cypress": "^13.17.0",
+		"nodemon": "^3.0.3"
+	}
+}

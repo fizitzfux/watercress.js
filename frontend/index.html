@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <link rel="icon" href="/icons/web-app-manifest-512x512.png" />
+    <link rel="shortcut icon" href="/icons/web-app-manifest-512x512.png" />
+    <link rel="manifest" href="manifest.json" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tasks.js</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script>
+      // Convenience function for development
+      function resetState() {
+        window.localStorage?.clear()
+        window.location.reload()
+      }
+    </script>
+    <script type="module" src="main.js"></script>
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('service.js')
+      }
+    </script>
+  </body>
+</html>

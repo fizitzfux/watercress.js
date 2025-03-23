@@ -1,0 +1,201 @@
+:root {
+  --margin-medium: 10px;
+  --screen-size: 400px;
+  --window-size: calc(var(--screen-size) * 2 + 32px);
+}
+
+* {
+  box-sizing: border-box;
+  font-family: system-ui;
+}
+body {
+  margin: 0;
+  padding: 10px 0 0 0;
+}
+#app {
+  border: 1px solid black;
+  max-width: var(--window-size);
+  margin: 15px auto;
+  padding: var(--margin-medium);
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row-reverse;
+  justify-content: center;
+  gap: var(--margin-medium);
+}
+.error {
+  color: red;
+}
+span.error {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  text-align: center;
+  font-size: smaller;
+}
+
+header {
+  height: auto;
+  display: flex;
+  align-items: center;
+  gap: var(--margin-medium);
+  border-bottom: 1px solid gray;
+  position: sticky;
+  top: 0;
+  margin-bottom: var(--margin-medium);
+  background-color: white;
+}
+header > * {
+  display: inline;
+}
+header > h1 {
+  color: yellowgreen;
+  margin: 0;
+}
+header > img {
+  width: 30px;
+}
+
+#screen1 {
+  width: var(--screen-size);
+  border: 1px solid black;
+}
+#screen2 {
+  width: var(--screen-size);
+  border: 1px solid black;
+  padding: 10px;
+}
+
+ol {
+  padding: 0 var(--margin-medium);
+  margin: 10px 0;
+}
+li {
+  list-style-type: none;
+  margin: 10px 0;
+  background-color: lightblue;
+  display: flex;
+}
+li > * {
+  margin: 0;
+  padding: 5px;
+}
+li:hover {
+  background-color: lightslategray;
+  cursor: default;
+}
+li.selected {
+  background-color: aquamarine;
+}
+li.button_group {
+  padding: 0;
+  background-color: transparent;
+}
+li > input {
+  margin: 0;
+  padding: 5px;
+  width: 30px;
+}
+li::after {
+  font-size: smaller;
+  font-style: italic;
+  text-align: end;
+  align-self: flex-end;
+  display: block;
+  flex-grow: 1;
+  margin-right: 5px;
+}
+li.skipped::after {
+  content: "not completed";
+}
+
+li.old::after {
+  content: "carried over";
+}
+
+.hidden {
+  display: none !important;
+}
+
+.button_group {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+  padding: 10px 10px 0 10px;
+}
+#screen2 .button_group {
+  padding: 5px 0 0 0;
+}
+.button_group > button {
+  flex-grow: 1;
+  background-color: lightblue;
+  border: none;
+  padding: 5px 0;
+
+}
+.button_group > button:hover {
+  background-color: lightslategray;
+}
+.button_group > button.selected {
+  background-color: aquamarine;
+}
+
+
+select {
+  width: 100%;
+  padding: 5px;
+  margin: 5px auto;
+  opacity: 1.0;
+  color: black;
+}
+
+input {
+  width: 100%;
+  padding: 5px;
+  margin: 5px auto;
+}
+input[type="date"] {
+  text-align: center;
+  display: block;
+}
+input[name="current_day"] {
+  width: calc(100% - 100px);
+  text-align: center;
+  height: 30px;
+}
+input[name="title"] {
+  font-size: larger;
+  font-weight: bold;
+}
+
+#current_day {
+  display: flex;
+  height: 30px;
+}
+#current_day > input {
+  text-align: center;
+  margin: 0;
+}
+#current_day > button {
+  width: 30px;
+}
+
+/* Phones, should match --window-size */
+@media only screen and (max-width: 832px)
+ {
+  #app {
+    border: none;
+    margin: 0 auto;
+  }
+
+  /* Display screen 2 if it has content, else screen 1 */
+  #screen2.empty,
+  #screen2:not(.empty) ~ #screen1 {
+    display: none;
+  }
+
+  #screen1,
+  #screen2 {
+    border: none;
+  }
+}

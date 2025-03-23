@@ -1,0 +1,17 @@
+{
+    "name": "Tasks.js - Your help for tasking!",
+    "short_name": "Tasks.js",
+    "theme_color": "#2196f3",
+    "background_color": "#2196f3",
+    "display": "standalone",
+    "scope": "/",
+    "start_url": "/",
+    "icons": [
+        {
+            "src": "/icons/web-app-manifest-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any"
+        }
+    ]
+}
